@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUSH ATTACHMENTS</title>
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Date and time display */
+        .date-time {
+            font-size: 18px;
+            color: red; /* Set date and time text color to red */
+            text-align: center;
+            margin-top: 20px;
+            background-color: #fff; /* Add background color to the date and time section */
+            padding: 10px; /* Add padding for better visibility */
+            border-radius: 8px; /* Add border radius for rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+            background-image: url('your-background-image.jpg'); /* Add your background image */
+            background-size: cover; /* Ensure the background image covers the entire area */
+            background-position: center; /* Center the background image */
+        }
+
+        /* Welcome section */
+        .welcome-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .welcome-section h1 {
+            color: blue; /* Set color to blue */
+        }
+        .welcome-section h2 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: red; /* Original color: red */
+        }
+
+        /* Gamer text cycling */
+        .dynamic-text {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: blue; /* Original color: blue */
+        }
+
+        /* Gallery styles */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1000px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .gallery-item {
+            width: 200px;
+            border: 2px solid #3498db;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Add cursor pointer */
+            transition: transform 0.2s ease-in-out; /* Smooth transition on hover */
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Hover effect */
+        }
+        .gallery-item img {
+            max-width: 100%; /* Ensure image is always within parent container width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 6px;
+            display: none; /* Initially hide images */
+            margin-top: 10px; /* Add margin for spacing */
+        }
+        .gallery-item.active img {
+            display: block; /* Show image when active */
+        }
+        .gallery-item h1 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Background images for sections */
+        .br-attachments {
+            background-image: url('image.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .mp-attachments {
+            background-image: url('image.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Visitor counter styles */
+        #visitor-counter {
+            text-align: center;
+            margin-top: 10px; /* Adjust margin as needed */
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Date and time display -->
+    <div class="date-time" id="datetime"></div>
+
+    <!-- Visitor counter -->
+    <div id="visitor-counter">Visitors: 0</div>
+
+    <!-- Welcome section -->
+    <div class="welcome-section">
+        <h1>Welcome to KUSH ATTACHMENTS</h1>
+        <h2>My name is kush and I'm a <span class="dynamic-text" id="changingText">GAMER</span></h2>
+    </div>
+
+    <!-- Main content container -->
+    <div class="gallery-container">
+        <!-- BR ATTACHMENTS section -->
+        <div class="gallery br-attachments">
+            <h1>KUSH BR ATTACHMENTS</h1>
+            <div class="gallery-item" data-image="images1.jpg" onclick="toggleImage(this)">
+                <img src="images1.jpg" alt="Rytec No Recoil">
+                <h1>Rytec</h1>
+            </div>
+            <div class="gallery-item" data-image="images2.jpg" onclick="toggleImage(this)">
+                <img src="images2.jpg" alt="AK117 MID/LONG RANGE">
+                <h1>AK117</h1>
+            </div>
+            <div class="gallery-item" data-image="images3.jpg" onclick="toggleImage(this)">
+                <img src="images3.jpg" alt="Jack12 attachments">
+                <h1>JACK-12</h1>
+            </div>
+            <div class="gallery-item" data-image="images4.jpg" onclick="toggleImage(this)">
+                <img src="images4.jpg" alt="HS0405">
+                <h1>HS0405</h1>
+            </div>
+        </div>
+
+        <!-- MP ATTACHMENTS section -->
+        <div class="gallery mp-attachments">
+            <h1>KUSH MP ATTACHMENTS</h1>
+            <div class="gallery-item" data-image="mp1.jpg" onclick="toggleImage(this)">
+                <img src="mp1.jpg" alt="KRM">
+                <h1>KRM</h1>
+            </div>
+            <div class="gallery-item" data-image="mp2.jpg" onclick="toggleImage(this)">
+                <img src="mp2.jpg" alt="BP50">
+                <h1>BP50</h1>
+            </div>
+            <div class="gallery-item" data-image="mp3.jpg" onclick="toggleImage(this)">
+                <img src="mp3.jpg" alt="FFAR1">
+                <h1>FFAR1</h1>
+            </div>
+            <div class="gallery-item" data-image="mp4.jpg" onclick="toggleImage(this)">
+                <img src="mp4.jpg" alt="MG42">
+                <h1>MG42</h1>
+            </div>
+            <div class="gallery-item" data-image="mp5.jpg" onclick="toggleImage(this)">
+                <img src="mp5.jpg" alt="LWS3 Tundra">
+                <h1>LWS3 Tundra</h1>
+            </div>
+            <div class="gallery-item" data-image="mp6.jpg" onclick="toggleImage(this)">
+                <img src="mp6.jpg" alt="ASM10">
+                <h1>ASM10</h1>
+            </div>
+            <div class="gallery-item" data-image="mp7.jpg" onclick="toggleImage(this)">
+                <img src="mp7.jpg" alt="KN-44">
+                <h1>KN-44</h1>
+            </div>
+            <div class="gallery-item" data-image="mp8.jpg" onclick="toggleImage(this)">
+                <img src="mp8.jpg" alt="GRAU">
+                <h1>GRAU</h1>
+            </div>
+            <div class="gallery-item" data-image="mp9.jpg" onclick="toggleImage(this)">
+                <img src="mp9.jpg" alt="DLQ">
+                <h1>DLQ</h1>
+            </div>
+            <div class="gallery-item" data-image="mp10.jpg" onclick="toggleImage(this)">
+                <img src="mp10.jpg" alt="TYPE 19">
+                <h1>TYPE 19</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for toggling image visibility -->
+    <script>
+        function toggleImage(element) {
+            // Remove active class from all items
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add active class to the clicked item
+            element.classList.add('active');
+        }
+    </script>
+
+    <!-- JavaScript for dynamic text cycling -->
+    <script>
+        function changeGamerText() {
+            const textElement = document.getElementById('changingText');
+            const texts = ['GAMER', 'CODMPLAYER', 'CONTENT CREATOR'];
+            const colors = ['#e74c3c', '#3498db', '#2ecc71'];
+            let textIndex = 0;
+            let colorIndex = 0;
+
+            setInterval(function() {
+                textElement.textContent = texts[textIndex];
+                textElement.style.color = colors[colorIndex];
+
+                textIndex = (textIndex + 1) % texts.length;
+                colorIndex = (colorIndex + 1) % colors.length;
+            }, 1000);
+        }
+
+        changeGamerText();
+    </script>
+
+    <!-- JavaScript for date and time display -->
+    <script>
+        function displayDateTime() {
+            const now = new Date();
+            const datetimeElement = document.getElementById('datetime');
+            datetimeElement.textContent = now.toLocaleString();
+        }
+
+        displayDateTime();
+        setInterval(displayDateTime, 1000);
+    </script>
+
+    <!-- JavaScript for visitor counter -->
+    <script>
+        // Initialize visitor count from localStorage or set to 0
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        const counterElement = document.getElementById('visitor-counter');
+
+        // Function to update and display visitor count
+        function updateVisitorCount() {
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+            counterElement.textContent = `Visitors: ${visitorCount}`;
+        }
+
+        // Call updateVisitorCount on page load
+        updateVisitorCount();
+    </script>
+</body>
+</html>
